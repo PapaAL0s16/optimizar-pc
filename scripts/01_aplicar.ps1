@@ -29,7 +29,7 @@ function Log([string]$msg, [string]$nivel = 'INFO') {
   $color = switch ($nivel) { 'OK' { 'Green' } 'ERROR' { 'Red' } 'WARN' { 'Yellow' } 'DRY' { 'DarkGray' } default { 'White' } }
   Write-Host $line -ForegroundColor $color
 }
-if (-not $esAdmin -and -not $DryRun) { Log 'Este script necesita Administrador. Ábrelo con -Verb RunAs.' 'ERROR'; exit 2 }
+# La versión se comprueba ANTES que los permisos: de nada sirve elevar en la shell equivocada.
 # PowerShell 7 no trae los cmdlets de punto de restauración (Checkpoint-Computer,
 # Enable-ComputerRestore, Get-ComputerRestorePoint): sin ellos no hay red de seguridad.
 if ($PSVersionTable.PSVersion.Major -ge 6) {
@@ -38,6 +38,7 @@ if ($PSVersionTable.PSVersion.Major -ge 6) {
   Log 'Relánzalo con:  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' 'ERROR'
   exit 4
 }
+if (-not $esAdmin -and -not $DryRun) { Log 'Este script necesita Administrador. Ábrelo con -Verb RunAs.' 'ERROR'; exit 2 }
 if ($DryRun) { Log '=== MODO DRY-RUN: no se cambia nada (no requiere Administrador) ===' 'DRY' }
 
 # ── Usuario interactivo (por si el admin que eleva no es el dueño de la sesión) ──
