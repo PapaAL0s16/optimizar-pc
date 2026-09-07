@@ -1,0 +1,195 @@
+# Entradas de arranque. Formato: ETIQUETA|patron (subcadena, sin distinguir mayúsculas)
+# Se compara contra el nombre de la entrada Y contra la ruta del ejecutable.
+#   SE_QUEDA  = no se toca nunca
+#   SE_VA     = se desactiva por defecto (reversible en Administrador de tareas > Inicio)
+#   PREGUNTAR = depende del uso; preguntar
+#   SEGURIDAD = acceso remoto o ubicación sospechosa; revisar antes
+# Las líneas que empiezan con # se ignoran. La primera coincidencia gana, en este orden.
+
+# ---- Se queda ----
+SE_QUEDA|SecurityHealth
+SE_QUEDA|Windows Defender
+SE_QUEDA|MsMpEng
+SE_QUEDA|Realtek
+SE_QUEDA|RtkAudUService
+SE_QUEDA|RAVCpl64
+SE_QUEDA|WavesSvc
+SE_QUEDA|Dolby
+SE_QUEDA|Nahimic
+SE_QUEDA|SynTPEnh
+SE_QUEDA|Synaptics
+SE_QUEDA|ETDCtrl
+SE_QUEDA|ELAN
+SE_QUEDA|igfxTray
+SE_QUEDA|IntelGraphics
+SE_QUEDA|IAStorIcon
+SE_QUEDA|RTHDVCPL
+SE_QUEDA|ctfmon
+SE_QUEDA|Microsoft Edge
+SE_QUEDA|msedge.exe --no-startup-window
+SE_QUEDA|WindowsDefender
+SE_QUEDA|Kaspersky
+SE_QUEDA|ESET
+SE_QUEDA|Bitdefender
+SE_QUEDA|Webroot
+
+# ---- Se va ----
+SE_VA|Spotify
+SE_VA|Steam
+SE_VA|EpicGamesLauncher
+SE_VA|Epic Games
+SE_VA|Discord
+SE_VA|Skype
+SE_VA|Zoom
+SE_VA|MSTeams
+SE_VA|Microsoft Teams
+SE_VA|Teams.exe
+SE_VA|Adobe
+SE_VA|AdobeAAMUpdater
+SE_VA|Acrobat
+SE_VA|CCXProcess
+SE_VA|Creative Cloud
+SE_VA|AdobeGCInvoker
+SE_VA|jusched
+SE_VA|Java Update
+SE_VA|iTunesHelper
+SE_VA|Apple Push
+SE_VA|CiscoWebEx
+SE_VA|Webex
+SE_VA|YourPhone
+SE_VA|Phone Link
+SE_VA|Cortana
+SE_VA|Xbox
+SE_VA|GameBar
+SE_VA|Send to OneNote
+SE_VA|OneNote
+SE_VA|CyberLink
+SE_VA|WildTangent
+SE_VA|HP Message
+SE_VA|HPMSGSVC
+SE_VA|HP Audio Switch
+SE_VA|GeForce Experience
+SE_VA|NVIDIA Broadcast
+SE_VA|NvBackend
+SE_VA|Razer
+SE_VA|iCUE
+SE_VA|Corsair
+SE_VA|Wallpaper Engine
+SE_VA|Rainmeter
+SE_VA|MSI Afterburner
+SE_VA|RivaTuner
+SE_VA|Wondershare
+SE_VA|Driver Booster
+SE_VA|Driver Support
+SE_VA|Advanced SystemCare
+SE_VA|IObit
+SE_VA|Web Companion
+SE_VA|WebCompanion
+SE_VA|Yandex
+SE_VA|Opera Browser Assistant
+SE_VA|Brave
+SE_VA|Avast
+SE_VA|AVG
+SE_VA|McAfee
+SE_VA|Norton
+SE_VA|Avira
+SE_VA|CCleaner
+SE_VA|Wise
+SE_VA|Glary
+SE_VA|uTorrent
+SE_VA|BitTorrent
+SE_VA|qBittorrent
+SE_VA|WhatsApp
+SE_VA|Telegram
+SE_VA|Slack
+SE_VA|Notion
+SE_VA|Figma
+SE_VA|Postman
+SE_VA|Docker Desktop
+SE_VA|EA app
+SE_VA|EADM
+SE_VA|Origin
+SE_VA|Ubisoft
+SE_VA|Battle.net
+SE_VA|Riot
+SE_VA|GOG Galaxy
+SE_VA|Rockstar
+SE_VA|Overwolf
+SE_VA|Medal
+SE_VA|OBS
+SE_VA|Streamlabs
+SE_VA|Lightshot
+SE_VA|ShareX
+SE_VA|Greenshot
+SE_VA|f.lux
+SE_VA|Duet
+SE_VA|Garmin
+SE_VA|Fitbit
+SE_VA|Samsung
+SE_VA|Kies
+SE_VA|Smart Switch
+SE_VA|Lenovo Vantage
+SE_VA|Dell Digital Delivery
+SE_VA|Acer Care
+SE_VA|Acer Quick Access
+SE_VA|MyASUS
+SE_VA|Armoury Crate
+SE_VA|Booking
+
+# ---- Preguntar ----
+PREGUNTAR|OneDrive
+PREGUNTAR|Dropbox
+PREGUNTAR|Google Drive
+PREGUNTAR|GoogleDriveFS
+PREGUNTAR|iCloud
+PREGUNTAR|Logitech
+PREGUNTAR|LogiOptions
+PREGUNTAR|Epson
+PREGUNTAR|Canon
+PREGUNTAR|Brother
+PREGUNTAR|HP Support Assistant
+PREGUNTAR|HPSF
+PREGUNTAR|Dell SupportAssist
+PREGUNTAR|Malwarebytes
+PREGUNTAR|Google Update
+PREGUNTAR|GoogleUpdate
+PREGUNTAR|Chrome
+PREGUNTAR|Firefox
+PREGUNTAR|Wacom
+PREGUNTAR|Huion
+PREGUNTAR|Focusrite
+PREGUNTAR|ASIO
+PREGUNTAR|VoiceMeeter
+PREGUNTAR|Bluetooth
+PREGUNTAR|Dell Peripheral
+PREGUNTAR|Lenovo Hotkeys
+PREGUNTAR|Fn Key
+PREGUNTAR|Power Manager
+PREGUNTAR|Battery
+
+# ---- Seguridad ----
+SEGURIDAD|AnyDesk
+SEGURIDAD|TeamViewer
+SEGURIDAD|UltraViewer
+SEGURIDAD|Supremo
+SEGURIDAD|Ammyy
+SEGURIDAD|LogMeIn
+SEGURIDAD|ScreenConnect
+SEGURIDAD|ConnectWise
+SEGURIDAD|Splashtop
+SEGURIDAD|RustDesk
+SEGURIDAD|\AppData\Local\Temp\
+SEGURIDAD|\Temp\
+SEGURIDAD|\Downloads\
+SEGURIDAD|\Descargas\
+SEGURIDAD|powershell
+SEGURIDAD|wscript
+SEGURIDAD|cscript
+SEGURIDAD|mshta
+SEGURIDAD|rundll32
+SEGURIDAD|regsvr32
+SEGURIDAD|cmd.exe /c
+SEGURIDAD|.vbs
+SEGURIDAD|.js
+SEGURIDAD|.bat
+SEGURIDAD|.ps1

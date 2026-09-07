@@ -1,0 +1,201 @@
+# Programas conocidos. Formato: ETIQUETA|patron (subcadena, sin distinguir mayúsculas)|nota
+# Se compara contra el nombre del programa instalado (DisplayName).
+# ETIQUETAS:
+#   PUP        = optimizador falso / adware / basura. Proponer desinstalar.
+#   AV_TERCERO = antivirus de tercero. Quitar SOLO si está vencido, duplicado, o el dueño no lo paga.
+#   PREGUNTAR  = útil para algunos, estorbo para otros. Preguntar al usuario.
+#   SEGURIDAD  = acceso remoto. Si el dueño no lo instaló a propósito, posible fraude de "soporte técnico".
+#   SE_QUEDA   = drivers y software base. No se toca nunca; solo se lista para que no estorbe.
+# Las líneas que empiezan con # se ignoran. La primera coincidencia gana, en este orden.
+
+# ---- Se queda (drivers, sistema, ofimática) ----
+SE_QUEDA|Realtek|drivers de audio/red
+SE_QUEDA|NVIDIA Controlador|drivers de video
+SE_QUEDA|NVIDIA Graphics Driver|drivers de video
+SE_QUEDA|NVIDIA PhysX|componente de drivers
+SE_QUEDA|NVIDIA Software del sistema|componente de drivers
+SE_QUEDA|NVIDIA HD Audio|componente de drivers
+SE_QUEDA|NVIDIA Controlador de audio|componente de drivers
+SE_QUEDA|NVIDIA FrameView|componente de drivers
+SE_QUEDA|AMD Software|drivers de video
+SE_QUEDA|AMD Chipset|drivers de chipset
+SE_QUEDA|Intel(R) Chipset|drivers
+SE_QUEDA|Intel(R) Management Engine|drivers
+SE_QUEDA|Intel(R) Serial IO|drivers
+SE_QUEDA|Intel(R) Wireless|drivers
+SE_QUEDA|Intel(R) Graphics|drivers
+SE_QUEDA|Intel(R) Rapid Storage|drivers
+SE_QUEDA|Intel(R) Network|drivers
+SE_QUEDA|Microsoft Visual C++|runtime, lo usan muchos programas
+SE_QUEDA|Microsoft .NET|runtime
+SE_QUEDA|Windows SDK|runtime
+SE_QUEDA|Microsoft Edge|navegador del sistema
+SE_QUEDA|Microsoft Edge WebView2|lo usan Office, Teams, etc.
+SE_QUEDA|Microsoft Update Health|componente de Windows Update
+SE_QUEDA|Microsoft 365|ofimática
+SE_QUEDA|Microsoft Office|ofimática
+SE_QUEDA|Synaptics|touchpad
+SE_QUEDA|ELAN|touchpad
+SE_QUEDA|Conexant|audio
+SE_QUEDA|Waves|audio del fabricante
+SE_QUEDA|Dolby|audio del fabricante
+
+# ---- Optimizadores falsos / limpiadores / actualizadores de drivers ----
+PUP|Driver Booster|IObit — actualizador de drivers, causa más problemas de los que arregla
+PUP|Driver Easy|actualizador de drivers
+PUP|DriverPack|actualizador de drivers con adware
+PUP|Driver Support|actualizador de drivers, scareware
+PUP|Driver Updater|actualizador de drivers genérico
+PUP|Driver Reviver|ReviverSoft
+PUP|Smart Driver|actualizador de drivers
+PUP|Advanced SystemCare|IObit — optimizador
+PUP|Smart Defrag|IObit
+PUP|IObit|cualquier producto IObit
+PUP|PC Cleaner|scareware
+PUP|PC Accelerate|scareware
+PUP|PC HelpSoft|scareware
+PUP|PC Optimizer|scareware
+PUP|PC Speed|scareware
+PUP|Speedy PC|scareware
+PUP|MyCleanPC|scareware
+PUP|OneSafe|scareware
+PUP|Outbyte|scareware
+PUP|Reimage|scareware
+PUP|Restoro|scareware
+PUP|Fortect|scareware (ex-Restoro)
+PUP|Slimware|scareware
+PUP|SlimCleaner|scareware
+PUP|Glary Utilities|optimizador
+PUP|Wise Care|optimizador
+PUP|Wise Registry|optimizador
+PUP|Auslogics|optimizador
+PUP|Uniblue|optimizador
+PUP|RegClean|limpiador de registro
+PUP|Registry Cleaner|limpiador de registro
+PUP|Registry Mechanic|limpiador de registro
+PUP|WinZip Driver Updater|adware
+PUP|WinZip System Utilities|adware
+PUP|WinZip Registry Optimizer|adware
+PUP|Avanquest|adware
+PUP|Systweak|adware
+PUP|Advanced System Optimizer|Systweak
+PUP|RegClean Pro|Systweak
+PUP|Total System Care|scareware
+PUP|System Mechanic|iolo — optimizador de pago innecesario
+PUP|Power Optimizer|scareware
+PUP|Web Companion|Lavasoft/Adaware — secuestra navegador
+PUP|WebCompanion|Lavasoft/Adaware
+PUP|ByteFence|antimalware falso
+PUP|Segurazo|antivirus falso
+PUP|SAntivirus|antivirus falso
+PUP|Wave Browser|navegador adware
+PUP|WaveBrowser|navegador adware
+PUP|OneLaunch|adware
+PUP|Chromstera|navegador adware
+PUP|Tempest Browser|navegador adware
+PUP|Opera GX Browser Assistant|residuo de Opera
+PUP|MyWebSearch|toolbar
+PUP|Ask Toolbar|toolbar
+PUP|Conduit|toolbar
+PUP|Search Protect|secuestrador
+PUP|Babylon|toolbar
+PUP|Delta Toolbar|toolbar
+PUP|Yahoo Powered|secuestrador de búsqueda
+PUP|Bing Bar|toolbar
+PUP|ClaroSearch|secuestrador
+PUP|Softonic|instalador con adware
+PUP|Express Files|adware
+PUP|WeatherBug|adware
+PUP|Weather Nation|adware
+PUP|WildTangent|juegos preinstalados con anuncios
+PUP|Candy Crush|preinstalado de Store, inofensivo pero innecesario
+PUP|Booking.com|preinstalado del fabricante
+PUP|ExpressVPN|si viene preinstalado del fabricante y no lo usa
+PUP|McAfee WebAdvisor|residuo de McAfee, innecesario
+PUP|Avast Secure Browser|navegador que Avast instala sin preguntar
+PUP|AVG Secure Browser|navegador que AVG instala sin preguntar
+PUP|Norton Safe Web|residuo
+PUP|Wondershare Helper|residuo de Wondershare, corre siempre
+PUP|Coupon|extensión/app de cupones
+PUP|Shopper|adware de compras
+PUP|Savings|adware de compras
+PUP|Yandex|si no es ruso, casi siempre fue instalado por otro programa
+PUP|Baidu|si no es chino, casi siempre fue instalado por otro programa
+PUP|360 Total Security|antivirus con adware
+PUP|Mail.Ru|instalado por otro programa
+
+# ---- Antivirus de terceros (Defender basta para uso casero) ----
+AV_TERCERO|McAfee|casi siempre preinstalado y vencido
+AV_TERCERO|Norton|casi siempre preinstalado y vencido
+AV_TERCERO|Avast|gratis pero pesado y con upsell agresivo
+AV_TERCERO|AVG|gratis pero pesado y con upsell agresivo
+AV_TERCERO|Avira|gratis pero pesado
+AV_TERCERO|Kaspersky|si lo paga, se queda
+AV_TERCERO|ESET|si lo paga, se queda
+AV_TERCERO|Bitdefender|si lo paga, se queda
+AV_TERCERO|Panda|pesado
+AV_TERCERO|TotalAV|upsell agresivo
+AV_TERCERO|Total AV|upsell agresivo
+AV_TERCERO|Webroot|si lo paga, se queda
+AV_TERCERO|Trend Micro|si lo paga, se queda
+AV_TERCERO|Sophos|si lo paga, se queda
+AV_TERCERO|Comodo|pesado
+
+# ---- Preguntar ----
+PREGUNTAR|Malwarebytes|la versión gratis es buena como segundo escáner; la de prueba vencida estorba
+PREGUNTAR|CCleaner|legítimo pero innecesario; si el dueño lo usa a conciencia se queda
+PREGUNTAR|HP Support Assistant|trae drivers de HP; útil si es HP. Quitar solo si molesta con avisos
+PREGUNTAR|HP JumpStart|promocional de HP
+PREGUNTAR|HP Documentation|inofensivo
+PREGUNTAR|Lenovo Vantage|trae drivers de Lenovo
+PREGUNTAR|Dell SupportAssist|trae drivers de Dell; ha tenido vulnerabilidades, mantener actualizado o quitar
+PREGUNTAR|Dell Digital Delivery|solo sirve la primera semana
+PREGUNTAR|Acer Care Center|drivers Acer
+PREGUNTAR|MyASUS|drivers ASUS
+PREGUNTAR|Armoury Crate|ASUS gaming; pesado
+PREGUNTAR|Dropbox|¿lo usa?
+PREGUNTAR|iCloud|¿tiene iPhone?
+PREGUNTAR|iTunes|¿tiene iPhone/iPod?
+PREGUNTAR|Bonjour|lo instala iTunes/Adobe; casi nunca hace falta
+PREGUNTAR|Skype|¿lo usa? Microsoft lo retiró en 2025
+PREGUNTAR|Zoom|si lo usa, se queda; solo se quita del arranque
+PREGUNTAR|Microsoft Teams|si lo usa, se queda; solo se quita del arranque
+PREGUNTAR|Spotify|se queda; solo se quita del arranque
+PREGUNTAR|Steam|se queda; solo se quita del arranque
+PREGUNTAR|Epic Games|se queda; solo se quita del arranque
+PREGUNTAR|Discord|se queda; solo se quita del arranque
+PREGUNTAR|Java|solo hace falta para programas específicos (SAT, bancos viejos). Preguntar antes de quitar
+PREGUNTAR|Adobe Acrobat Reader|si lo usa para PDF se queda; Edge también abre PDF
+PREGUNTAR|Adobe Creative Cloud|si no usa Photoshop/Illustrator, quitar
+PREGUNTAR|OneDrive|si ahí están sus fotos/documentos, INTOCABLE
+PREGUNTAR|Google Drive|si ahí están sus archivos, intocable
+PREGUNTAR|LibreOffice|se queda si lo usa
+PREGUNTAR|WinRAR|inofensivo; Windows ya abre .zip y .rar
+PREGUNTAR|7-Zip|inofensivo y útil
+PREGUNTAR|VLC|inofensivo y útil
+PREGUNTAR|CyberLink|preinstalado; si no ve DVD, quitar
+PREGUNTAR|Power2Go|CyberLink preinstalado
+PREGUNTAR|PowerDVD|CyberLink preinstalado
+PREGUNTAR|Nero|si no graba discos, quitar
+PREGUNTAR|Epson|utilidad de impresora; se queda si tiene Epson
+PREGUNTAR|Canon|utilidad de impresora; se queda si tiene Canon
+PREGUNTAR|Brother|utilidad de impresora; se queda si tiene Brother
+PREGUNTAR|Logitech|software de mouse/teclado; se queda si usa sus funciones
+PREGUNTAR|NVIDIA App|panel de NVIDIA; se queda, solo se quita del arranque
+PREGUNTAR|GeForce Experience|se queda, solo se quita del arranque
+PREGUNTAR|NVIDIA Broadcast|solo si hace streaming; consume RAM siempre
+PREGUNTAR|Intel|otros componentes Intel: preguntar
+
+# ---- Acceso remoto: bandera de seguridad ----
+SEGURIDAD|AnyDesk|si el dueño no lo instaló a propósito → posible fraude de soporte técnico
+SEGURIDAD|TeamViewer|idem; si el familiar lo usa para ayudar, se queda y el servicio a Manual
+SEGURIDAD|UltraViewer|muy usado por estafadores
+SEGURIDAD|Supremo|muy usado por estafadores
+SEGURIDAD|Ammyy|muy usado por estafadores
+SEGURIDAD|LogMeIn|acceso remoto
+SEGURIDAD|GoToAssist|acceso remoto
+SEGURIDAD|ConnectWise|acceso remoto (ScreenConnect), muy usado por estafadores
+SEGURIDAD|ScreenConnect|acceso remoto, muy usado por estafadores
+SEGURIDAD|Splashtop|acceso remoto
+SEGURIDAD|RustDesk|acceso remoto
+SEGURIDAD|Quick Assist|viene con Windows; solo es sospechoso si hay rastro de uso reciente

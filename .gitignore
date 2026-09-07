@@ -1,0 +1,21 @@
+# Salida de la skill: contiene un inventario COMPLETO del equipo donde se corrió
+# (nombre de PC y usuario, software instalado, archivo hosts, IPs, rutas personales).
+# Nunca debe llegar a un repo público.
+OptimizarPC/
+diagnostico.json
+resumen.txt
+plan.json
+deshacer.json
+aplicar.log
+verificar_*.json
+reporte.md
+LEEME.txt
+respaldo_*.reg
+respaldo_*.json
+prueba_out/
+
+# Basura habitual
+*.zip
+Thumbs.db
+desktop.ini
+.DS_Store
