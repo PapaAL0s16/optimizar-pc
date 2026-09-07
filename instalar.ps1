@@ -1,14 +1,17 @@
-﻿<#
+<#
   Instala la skill "optimizar-pc" en ~\.claude\skills\optimizar-pc\ desde GitHub.
 
-  Uso (una línea, en cualquier PowerShell, SIN Administrador):
+  Uso (una linea, en cualquier PowerShell, SIN Administrador):
     irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/main/instalar.ps1 | iex
 
-  Para fijar una versión concreta en lugar de la última:
+  Para fijar una version concreta en lugar de la ultima:
     $env:OPTIMIZARPC_REF='v1.0.0'; irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/v1.0.0/instalar.ps1 | iex
 
   Este script NO requiere Administrador y NO modifica el sistema: solo copia archivos
-  dentro de tu perfil de usuario. Quien optimiza es la skill, después, y pidiendo permiso.
+  dentro de tu perfil de usuario. Quien optimiza es la skill, despues, y pidiendo permiso.
+  NOTA PARA QUIEN LO EDITE: este archivo se consume con `irm | iex`, asi que debe
+  guardarse SIN BOM y en ASCII puro. Con BOM, PowerShell 5.1 intenta ejecutar el
+  caracter invisible como si fuera un comando y falla.
 #>
 $ErrorActionPreference = 'Stop'
 $repo = 'PapaAL0s16/optimizar-pc'
@@ -24,11 +27,11 @@ $skills  = Join-Path $env:USERPROFILE '.claude\skills'
 $destino = Join-Path $skills 'optimizar-pc'
 
 # Blindaje: $destino tiene que ser absoluto y terminar exactamente donde esperamos.
-# Sin esto, un %USERPROFILE% raro podría convertir el Remove-Item de abajo en algo destructivo.
+# Sin esto, un %USERPROFILE% raro podria convertir el Remove-Item de abajo en algo destructivo.
 $destinoFull = [IO.Path]::GetFullPath($destino)
 if (-not [IO.Path]::IsPathRooted($destinoFull) -or $destinoFull.Length -lt 20 -or
     -not $destinoFull.EndsWith('\.claude\skills\optimizar-pc', [StringComparison]::OrdinalIgnoreCase)) {
-  throw "Ruta de instalación inesperada, cancelo por seguridad: $destinoFull"
+  throw "Ruta de instalacion inesperada, cancelo por seguridad: $destinoFull"
 }
 
 $tmp = Join-Path ([IO.Path]::GetTempPath()) ("optimizarpc-" + [Guid]::NewGuid().ToString('N'))
@@ -45,7 +48,7 @@ try {
   Expand-Archive -Path $zip -DestinationPath $tmp -Force
 
   $raiz = Get-ChildItem -LiteralPath $tmp -Directory | Select-Object -First 1
-  if (-not $raiz) { throw 'El paquete descargado está vacío.' }
+  if (-not $raiz) { throw 'El paquete descargado esta vacio.' }
 
   # Verificar que trae lo que debe traer antes de tocar nada en tu perfil
   foreach ($req in 'SKILL.md', 'scripts\00_diagnostico.ps1', 'scripts\01_aplicar.ps1', 'scripts\02_verificar.ps1', 'referencias\pups.txt', 'referencias\arranque.txt') {
@@ -54,12 +57,12 @@ try {
 
   New-Item -ItemType Directory -Force -Path $skills | Out-Null
   if (Test-Path -LiteralPath $destinoFull) {
-    Write-Host "Reemplazando instalación anterior..." -ForegroundColor DarkGray
+    Write-Host "Reemplazando instalacion anterior..." -ForegroundColor DarkGray
     Remove-Item -LiteralPath $destinoFull -Recurse -Force
   }
   Copy-Item -LiteralPath $raiz.FullName -Destination $destinoFull -Recurse
 
-  # Windows marca como "bloqueado" todo .ps1 bajado de internet; sin esto no correrían
+  # Windows marca como "bloqueado" todo .ps1 bajado de internet; sin esto no correrian
   Get-ChildItem -LiteralPath $destinoFull -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
 
   $n = (Get-ChildItem -LiteralPath $destinoFull -Recurse -File).Count

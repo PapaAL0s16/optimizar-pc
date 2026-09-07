@@ -2,3 +2,6 @@
 *.ps1 text eol=crlf working-tree-encoding=UTF-8
 *.md text eol=lf
 *.txt text eol=lf
+
+# instalar.ps1 se consume con `irm | iex`: debe quedar SIN BOM y byte a byte como esta.
+instalar.ps1 -text
