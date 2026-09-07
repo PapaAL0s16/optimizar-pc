@@ -6,12 +6,13 @@ espera tu aprobación, ejecuta con punto de restauración y deja un archivo de "
 
 ## Instalar (un comando, cualquier Windows 10/11)
 
-Abre PowerShell y pega:
+Abre PowerShell y escribe:
 
 ```powershell
-irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/main/instalar.ps1 | iex
+irm github.com/PapaAL0s16/optimizar-pc/raw/main/i.ps1|iex
 ```
 
+No hace falta Administrador ni instalar nada más: PowerShell ya viene con Windows.
 Descarga este repo y lo deja en `C:\Users\<usuario>\.claude\skills\optimizar-pc\`.
 Volver a correrlo = actualizar. Luego abre Claude Desktop → **Code** y escribe:
 
@@ -63,11 +64,11 @@ En corto:
 - Los desinstaladores del registro se ejecutan **sin shell** y se validan antes; si no pasan, no corren.
 - Antes de cualquier cambio: punto de restauración + respaldo de claves de arranque + `deshacer.json`.
 
-`irm | iex` ejecuta código sin verificarlo. Son ~60 líneas — [léelas antes](instalar.ps1) — o fija
+`irm | iex` ejecuta código sin verificarlo. Son ~60 líneas — [léelas antes](i.ps1) — o fija
 una versión concreta en vez de `main`:
 
 ```powershell
-irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/v1.0.0/instalar.ps1 | iex
+irm github.com/PapaAL0s16/optimizar-pc/raw/v1.0.0/i.ps1 | iex
 ```
 
 > ⚠️ **`diagnostico.json` (en tu Escritorio) contiene un inventario completo del equipo**: nombre de PC
@@ -83,7 +84,7 @@ En Claude: *"deshaz los cambios de optimizar-pc"* → corre `01_aplicar.ps1 -Des
 
 ```
 SKILL.md                    instrucciones que sigue Claude (el criterio vive aquí)
-instalar.ps1                instalador de una línea
+i.ps1                       instalador de una línea
 scripts/
   00_diagnostico.ps1        solo lectura → diagnostico.json + resumen.txt
   01_aplicar.ps1            ejecuta plan.json aprobado · -DryRun · -Deshacer

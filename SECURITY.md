@@ -8,7 +8,7 @@ dice exactamente qué hace, qué no hace, y dónde está el riesgo real.
 | | |
 |---|---|
 | **Ejecuta como Administrador** | Solo `00_diagnostico.ps1` (lectura) y `01_aplicar.ps1` (cambios). Nada más. |
-| **Sale a internet** | Solo `instalar.ps1`, y solo a `github.com`. Los tres scripts de la skill **no hacen ninguna conexión de red**: no descargan, no suben, no telemetría. |
+| **Sale a internet** | Solo `i.ps1`, y solo a `github.com`. Los tres scripts de la skill **no hacen ninguna conexión de red**: no descargan, no suben, no telemetría. |
 | **Archivos del usuario** | **Nunca los borra.** Documentos, Escritorio, Descargas, Imágenes y OneDrive solo se miden para reportar tamaño. |
 | **Borrado** | Restringido por lista blanca a: `%TEMP%`, `C:\Windows\Temp`, caché de Windows Update, WER, `C:\AMD\|NVIDIA\|Intel`, cachés de navegador. Cualquier ruta fuera de esa lista se registra como `BLOQUEADO` y no se toca. |
 | **Registro** | Solo las claves de `StartupApproved` (las mismas que usa el Administrador de tareas), transparencia/animaciones y el punto de restauración. Validado contra lista blanca; una clave fuera de ella se rechaza. |
@@ -24,13 +24,13 @@ El instalador de una línea confía en que el repo no ha sido alterado. Si la cu
 fuera comprometida, quien instale ejecuta lo que el atacante haya puesto. No hay forma de
 evitarlo con código dentro del propio repo. Mitigaciones:
 
-- **Lee el script antes de ejecutarlo.** Son ~60 líneas: <https://github.com/PapaAL0s16/optimizar-pc/blob/main/instalar.ps1>
+- **Lee el script antes de ejecutarlo.** Son ~60 líneas: <https://github.com/PapaAL0s16/optimizar-pc/blob/main/i.ps1>
 - **Fija una versión** en lugar de `main`, para que un cambio futuro no te llegue solo:
   ```powershell
-  irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/v1.0.0/instalar.ps1 | iex
+  irm github.com/PapaAL0s16/optimizar-pc/raw/v1.0.0/i.ps1 | iex
   ```
 - El dueño del repo debe tener **2FA activo** y **protección de rama** en `main`.
-- `instalar.ps1` **no pide Administrador** y solo escribe dentro de `%USERPROFILE%\.claude\skills\`.
+- `i.ps1` **no pide Administrador** y solo escribe dentro de `%USERPROFILE%\.claude\skills\`.
   Verifica la ruta de destino antes de borrar nada y aborta si no es la esperada.
 
 ### 2. Inyección de comandos por el desinstalador del registro — corregido

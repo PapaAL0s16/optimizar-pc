@@ -3,5 +3,5 @@
 *.md text eol=lf
 *.txt text eol=lf
 
-# instalar.ps1 se consume con `irm | iex`: debe quedar SIN BOM y byte a byte como esta.
-instalar.ps1 -text
+# i.ps1 se consume con `irm | iex`: debe quedar SIN BOM y byte a byte como esta.
+i.ps1 -text

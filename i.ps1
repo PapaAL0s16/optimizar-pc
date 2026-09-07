@@ -2,10 +2,10 @@
   Instala la skill "optimizar-pc" en ~\.claude\skills\optimizar-pc\ desde GitHub.
 
   Uso (una linea, en cualquier PowerShell, SIN Administrador):
-    irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/main/instalar.ps1 | iex
+    irm github.com/PapaAL0s16/optimizar-pc/raw/main/i.ps1 | iex
 
   Para fijar una version concreta en lugar de la ultima:
-    $env:OPTIMIZARPC_REF='v1.0.0'; irm https://raw.githubusercontent.com/PapaAL0s16/optimizar-pc/v1.0.0/instalar.ps1 | iex
+    $env:OPTIMIZARPC_REF='v1.0.0'; irm github.com/PapaAL0s16/optimizar-pc/raw/v1.0.0/i.ps1 | iex
 
   Este script NO requiere Administrador y NO modifica el sistema: solo copia archivos
   dentro de tu perfil de usuario. Quien optimiza es la skill, despues, y pidiendo permiso.
