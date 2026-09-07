@@ -37,7 +37,10 @@ pídele al usuario que dé clic en "Sí"):
 
 ```powershell
 $out = "$env:USERPROFILE\Desktop\OptimizarPC"
-Start-Process powershell -Verb RunAs -Wait -ArgumentList @(
+# Ruta completa a propósito: tiene que ser Windows PowerShell 5.1, NO pwsh 7
+# (PowerShell 7 no trae Checkpoint-Computer y no podría crear el punto de restauración).
+$ps = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
+Start-Process $ps -Verb RunAs -Wait -ArgumentList @(
   "-NoProfile","-ExecutionPolicy","Bypass","-File","`"$skill\scripts\00_diagnostico.ps1`"","-OutDir","`"$out`""
 )
 ```

@@ -30,6 +30,14 @@ function Log([string]$msg, [string]$nivel = 'INFO') {
   Write-Host $line -ForegroundColor $color
 }
 if (-not $esAdmin -and -not $DryRun) { Log 'Este script necesita Administrador. Ábrelo con -Verb RunAs.' 'ERROR'; exit 2 }
+# PowerShell 7 no trae los cmdlets de punto de restauración (Checkpoint-Computer,
+# Enable-ComputerRestore, Get-ComputerRestorePoint): sin ellos no hay red de seguridad.
+if ($PSVersionTable.PSVersion.Major -ge 6) {
+  Log 'Estás en PowerShell 7. Este script necesita Windows PowerShell 5.1, el que trae Windows.' 'ERROR'
+  Log 'Motivo: PowerShell 7 no tiene Checkpoint-Computer, así que no se podría crear el punto de restauración.' 'ERROR'
+  Log 'Relánzalo con:  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' 'ERROR'
+  exit 4
+}
 if ($DryRun) { Log '=== MODO DRY-RUN: no se cambia nada (no requiere Administrador) ===' 'DRY' }
 
 # ── Usuario interactivo (por si el admin que eleva no es el dueño de la sesión) ──

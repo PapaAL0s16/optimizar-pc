@@ -12,7 +12,22 @@ Abre PowerShell y escribe:
 irm github.com/PapaAL0s16/optimizar-pc/raw/main/i.ps1|iex
 ```
 
-No hace falta Administrador ni instalar nada más: PowerShell ya viene con Windows.
+No hace falta Administrador, ni Node, ni git, ni cambiar la ExecutionPolicy: PowerShell ya
+viene con Windows y el comando funciona incluso con la política `Restricted` de fábrica.
+
+<details>
+<summary><b>¿Nunca has abierto PowerShell? Paso a paso</b></summary>
+
+1. Pulsa la tecla **Windows**.
+2. Escribe `powershell`.
+3. Pulsa **Enter** (no hace falta "ejecutar como administrador").
+4. Se abre una ventana azul o negra. Pega el comando con **Ctrl+V** o clic derecho.
+5. Pulsa **Enter** y espera unos segundos.
+
+Si sale `Skill instalada (13 archivos) en: ...`, listo. Cierra la ventana.
+
+</details>
+
 Descarga este repo y lo deja en `C:\Users\<usuario>\.claude\skills\optimizar-pc\`.
 Volver a correrlo = actualizar. Luego abre Claude Desktop → **Code** y escribe:
 
@@ -21,6 +36,18 @@ Volver a correrlo = actualizar. Luego abre Claude Desktop → **Code** y escribe
 ```
 
 (Si Claude ya estaba abierto, ciérralo y vuelve a abrirlo: lee las skills al arrancar.)
+
+### Requisitos
+
+| | |
+|---|---|
+| Windows 10 o 11 | ✅ PowerShell 5.1 ya viene incluido |
+| **Claude Desktop** instalado y con sesión iniciada | ⬅️ lo único que sí tienes que instalar aparte |
+| Internet | para descargar la skill |
+| Administrador | ❌ no para instalar · ✅ sí para optimizar (te lo pide después) |
+
+Probado con la ExecutionPolicy en `Restricted`, `AllSigned`, `RemoteSigned` y sin definir,
+y tanto en Windows PowerShell 5.1 como en PowerShell 7.
 
 ### Alternativas
 
